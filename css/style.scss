@@ -1,0 +1,290 @@
+@import "../css/variables";
+@import "../css/mixins";
+
+.image-container{
+  img{
+    max-width: 100%;
+  }
+}
+
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container{
+  max-width: 25%;
+}
+
+.search{
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 100px;
+  color: white;
+
+}
+ul{
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "PT Serif", serif;
+  font-weight: lighter;
+}
+
+header{
+  nav{
+    .firstNav{
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      align-items: center;
+
+
+      .iconsNav{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        align-items: center;
+        grid-gap: 2rem;
+      }
+
+    }
+
+  }
+
+}
+.secondNav{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+
+
+
+  #menu {
+    position: relative;
+    text-align: left;
+    margin-right: 15px;
+
+    a{
+      color: $primaryColor;
+    }
+
+    #dropdown {
+      display: none;
+    }
+
+  }
+  #menu:hover #dropdown {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    border: 1px solid $primaryColor;
+    background-color: white;
+  }
+
+  //auto 1fr
+  //auto = su espacio, 1fr=todoel espacio
+  //necesita fr
+
+
+  div{
+    display: grid;
+    grid-template-columns: 1fr;
+    form{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      //mirar movil y tablet
+
+      .form-search{
+        border: 2px solid black;
+        border-radius: 100px;
+        padding: 10px;
+
+
+      }
+
+      button{
+
+      }
+    }
+  }
+
+
+
+}
+
+.lead {
+  background-color: $leadColor;
+  text-align: center;
+
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1rem;
+
+    li {
+      list-style: none;
+
+      img {
+        border-radius: 1000px;
+      }
+
+    }
+  }
+}
+
+main {
+  #popularGifts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 1rem;
+
+
+      article {
+        section {
+          p {
+            .old-price {
+              color: $oldPriceColor;
+            }
+            .offer {
+              color: $oldPriceColor;
+              text-decoration: line-through;
+
+            }
+          }
+        }
+      }
+
+
+      .destacado {
+        grid-column: span 2;
+
+
+        @include escritorio($escritorio) {
+          grid-column: 1 / 3;
+          grid-row: 1 / 3;
+        }
+      }
+    }
+  }
+
+  #discoverShops{
+    text-align: center;
+    margin-bottom: 10px;
+
+
+    @include escritorio($escritorio){
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      text-align: left;
+      align-items: center;
+    }
+
+
+    div{
+      button{
+        background-color: white;
+        padding: 10px;
+        border-radius: 100px;
+        border: 2px solid black;
+        margin-bottom: 8px;
+      }
+    }
+
+
+    div+div{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 1rem;
+
+      article{
+        border: 1px solid $primaryColor;
+        @include escritorio($escritorio){
+          text-align: center;
+        }
+      }
+
+
+    }
+  }
+
+  #whatIsEtsy{
+    background-color: $whatIsEtsyColor;
+    text-align: center;
+    padding: 10px;
+
+    .gridText{
+      @include escritorio($escritorio){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    a{
+      text-decoration: underline;
+    }
+
+    div{
+      button{
+        background-color: white;
+        padding: 10px;
+        border-radius: 100px;
+        border: 2px solid black;
+      }
+    }
+
+  }
+
+
+footer{
+  display: grid; //igual q 1fr
+
+  .footer1{
+    background-color: $lightBlue;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+    h5{
+      text-align: center;
+    }
+
+
+
+  }
+
+  .footer2{
+    background-color: $deepBlue;
+    display: grid;
+    grid-template-columns: 150px auto;
+    justify-content: center;
+    align-items: center;
+
+
+
+    button{
+      background-color: $lightBlue;
+      color: white;
+      border-radius: 100px;
+      padding: 10px;
+      border: none;
+      margin: 8px 0;
+    }
+  }
+
+  .footer3{
+    background-color: black;
+    color: white;
+    text-align: center;
+
+    div{
+      .footerUrl{
+        text-decoration: underline;
+      }
+    }
+  }
+
+}
+

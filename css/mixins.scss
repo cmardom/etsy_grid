@@ -1,0 +1,24 @@
+@mixin movil($tablet) {
+  @media screen and (max-width:$tablet){
+    @content;
+  }
+}
+
+
+
+
+
+@mixin tablet($tablet) {
+  @media screen and (min-width:$tablet){
+    @content;
+  }
+}
+
+
+
+
+@mixin escritorio($escritorio) {
+  @media screen and (min-width:$escritorio){
+    @content;
+  }
+}
